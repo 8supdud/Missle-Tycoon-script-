@@ -561,6 +561,47 @@ if not ok then
     end
 end
 
+-- ** LEFT-ALIGNED ICON (Separate from GUI, with decal) **
+local iconFrame = Instance.new("ImageLabel")
+iconFrame.Name = "VozexIcon"
+iconFrame.Size = UDim2.new(0, 48, 0, 48)
+iconFrame.Position = UDim2.new(0, 12, 0, 12)
+iconFrame.BackgroundTransparency = 1
+iconFrame.Image = "rbxassetid://117143284491304"
+iconFrame.ScaleType = Enum.ScaleType.Fit
+iconFrame.Parent = gui
+iconFrame.ZIndex = 100
+
+-- Optional: Add a subtle glow behind icon
+local iconGlow = Instance.new("Frame")
+iconGlow.Name = "IconGlow"
+iconGlow.Size = UDim2.new(0, 54, 0, 54)
+iconGlow.Position = UDim2.new(0, 9, 0, 9)
+iconGlow.BackgroundColor3 = COLORS.accent
+iconGlow.BackgroundTransparency = 0.85
+iconGlow.BorderSizePixel = 0
+iconGlow.ZIndex = 99
+local glowCorner = Instance.new("UICorner")
+glowCorner.CornerRadius = UDim.new(1, 0)
+glowCorner.Parent = iconGlow
+iconGlow.Parent = gui
+
+RegisterThemed(iconGlow, function()
+    pcall(function() iconGlow.BackgroundColor3 = COLORS.accent end)
+end)
+
+-- Mobile scaling for icon
+local function scaleIconForMobile()
+    if UserInputService.TouchEnabled then
+        iconFrame.Size = UDim2.new(0, 36, 0, 36)
+        iconFrame.Position = UDim2.new(0, 8, 0, 8)
+        iconGlow.Size = UDim2.new(0, 42, 0, 42)
+        iconGlow.Position = UDim2.new(0, 5, 0, 5)
+    end
+end
+scaleIconForMobile()
+UserInputService.TouchEnabledChanged:Connect(scaleIconForMobile)
+
 -------------------------------------------------------------------------------
 -------------------------------------------------------------------------------
 -- ** Helper functions start here
@@ -700,7 +741,8 @@ local function makeTab(name, tabsParent, pagesParent, onSelect, colHeaders, warn
         msg.TextColor3 = COLORS.text
         msg.TextWrapped = true
         msg.Text = warningText
-        msg.TextXAlignment = Enum.TextXAlignment.Center        msg.TextYAlignment = Enum.TextYAlignment.Center
+        msg.TextXAlignment = Enum.TextXAlignment.Center
+        msg.TextYAlignment = Enum.TextYAlignment.Center
         msg.ZIndex = modal.ZIndex + 1
         msg.Parent = modal
         RegisterThemed(msg)
@@ -3184,31 +3226,12 @@ end
 local root = Instance.new("Frame")
 local bannerHeight = 32
 local TOPBAR_SPACING = 17
-
--- ** DETECT SCREEN SIZE FOR RESPONSIVE SCALING **
-local screenSize = workspace.CurrentCamera and workspace.CurrentCamera.ViewportSize or Vector2.new(1920, 1080)
-local isMobileDevice = UserInputService.TouchEnabled and not UserInputService.MouseEnabled
-local isSmallScreen = screenSize.X < 800 or isMobileDevice
-
--- ** Base UI size (larger for PC, scaled for mobile) **
-local baseWidth = 760
-local baseHeight = 520 + bannerHeight + TOPBAR_SPACING
-local scaleFactor = 1
-
-if isSmallScreen then
-    scaleFactor = math.min(0.7, screenSize.X / 1100)
-end
-
-local uiWidth = baseWidth * scaleFactor
-local uiHeight = baseHeight * scaleFactor
-
-root.Size = UDim2.new(0, uiWidth, 0, uiHeight)
-root.Position = UDim2.new(0.5, -uiWidth/2, 0.5, -uiHeight/2)
-root.AnchorPoint = Vector2.new(0.5, 0.5)
+root.Size = UDim2.new(0, 760, 0, 520 + bannerHeight + TOPBAR_SPACING)
+root.Position = UDim2.new(0.5, -380, 0.5, -260 - (bannerHeight/2) - (TOPBAR_SPACING/2))
+root.AnchorPoint = Vector2.new(0.0,0.0)
 root.BackgroundColor3 = COLORS.bg
 root.BackgroundTransparency = 0.08
 root.Parent = gui
-
 local rootCorner = Instance.new("UICorner") rootCorner.Parent = root
 
 -- Glass backdrop
@@ -3223,51 +3246,9 @@ local backdropCorner = Instance.new("UICorner") backdropCorner.CornerRadius = UD
 
 RegisterThemed(root)
 
--- ** LEFT-ALIGNED ICON WITH CUSTOM RBXASSET ID **
-local iconFrame = Instance.new("ImageLabel")
-iconFrame.Name = "VozexIcon"
-iconFrame.BackgroundTransparency = 1
-iconFrame.Image = "rbxassetid://117143284491304"
-iconFrame.ScaleType = Enum.ScaleType.Fit
-
--- ** Icon size based on screen size **
-if isSmallScreen then
-    iconFrame.Size = UDim2.new(0, 32, 0, 32)
-    iconFrame.Position = UDim2.new(0, 12, 0, 6)
-else
-    iconFrame.Size = UDim2.new(0, 48, 0, 48)
-    iconFrame.Position = UDim2.new(0, 16, 0, 8)
-end
-
-iconFrame.Parent = root
-iconFrame.ZIndex = 70
-
--- ** Glow effect behind icon **
-local iconGlow = Instance.new("Frame")
-iconGlow.Name = "IconGlow"
-if isSmallScreen then
-    iconGlow.Size = UDim2.new(0, 38, 0, 38)
-    iconGlow.Position = UDim2.new(0, 9, 0, 3)
-else
-    iconGlow.Size = UDim2.new(0, 54, 0, 54)
-    iconGlow.Position = UDim2.new(0, 13, 0, 5)
-end
-iconGlow.BackgroundColor3 = COLORS.accent
-iconGlow.BackgroundTransparency = 0.85
-iconGlow.BorderSizePixel = 0
-iconGlow.ZIndex = 65
-iconGlow.Parent = root
-local glowCorner = Instance.new("UICorner")
-glowCorner.CornerRadius = UDim.new(1, 0)
-glowCorner.Parent = iconGlow
-
-RegisterThemed(iconGlow, function()
-    pcall(function() iconGlow.BackgroundColor3 = COLORS.accent end)
-end)
-
 -- Tabs bar with modern styling
 local tabsBar = Instance.new("Frame")
-tabsBar.Size = UDim2.new(0, isSmallScreen and 120 or 160, 1, -(bannerHeight + TOPBAR_SPACING))
+tabsBar.Size = UDim2.new(0, 160, 1, -(bannerHeight + TOPBAR_SPACING))
 tabsBar.Position = UDim2.new(0, 0, 0, bannerHeight + TOPBAR_SPACING)
 tabsBar.BackgroundColor3 = COLORS.panel
 tabsBar.BackgroundTransparency = 0.85
@@ -3286,8 +3267,8 @@ RegisterThemed(tabsBar)
 
 local pages = Instance.new("ScrollingFrame")
 pages.Name = "Pages"
-pages.Size = UDim2.new(1, -(isSmallScreen and 120 or 160), 1, -(bannerHeight + TOPBAR_SPACING))
-pages.Position = UDim2.new(0, isSmallScreen and 120 or 160, 0, bannerHeight + math.floor(TOPBAR_SPACING/3))
+pages.Size = UDim2.new(1, -160, 1, -(bannerHeight + TOPBAR_SPACING))
+pages.Position = UDim2.new(0, 160, 0, bannerHeight + math.floor(TOPBAR_SPACING/3))
 pages.BackgroundTransparency = 1
 pages.ScrollBarThickness = 10
 pages.AutomaticCanvasSize = Enum.AutomaticSize.Y
@@ -3296,14 +3277,14 @@ pages.ClipsDescendants = true
 pages.Parent = root
 RegisterThemed(pages)
 
--- top banner label with modern styling (shifted right to accommodate icon)
+-- top banner label with modern styling
 local banner = Instance.new("TextLabel")
 banner.Name = "Banner"
 banner.Size = UDim2.new(1, 0, 0, bannerHeight)
-banner.Position = UDim2.new(0, isSmallScreen and 55 or 75, 0, 0)
+banner.Position = UDim2.new(0, 0, 0, 0)
 banner.BackgroundTransparency = 1
 banner.Font = Enum.Font.GothamBold
-banner.TextSize = isSmallScreen and 13 or 15
+banner.TextSize = 15
 banner.TextColor3 = COLORS.accent
 banner.Text = "VOZEX HUB 👑"
 banner.TextXAlignment = Enum.TextXAlignment.Center
@@ -3327,14 +3308,14 @@ end)
 
 local helpBtn = Instance.new("TextButton")
 helpBtn.Name = "HelpButton"
-helpBtn.Size = UDim2.new(0, isSmallScreen and 60 or 72, 0, isSmallScreen and 24 or 28)
+helpBtn.Size = UDim2.new(0, 72, 0, 28)
 helpBtn.AnchorPoint = Vector2.new(0, 0)
-helpBtn.Position = UDim2.new(0, isSmallScreen and 4 or 4, 0, 6)  
+helpBtn.Position = UDim2.new(0, 4, 0, 6)  
 helpBtn.BackgroundColor3 = COLORS.panel
 helpBtn.BackgroundTransparency = 0.7
 helpBtn.TextColor3 = COLORS.text
 helpBtn.Font = Enum.Font.GothamBold
-helpBtn.TextSize = isSmallScreen and 12 or 14
+helpBtn.TextSize = 14
 helpBtn.Text = "Help"
 helpBtn.AutoButtonColor = false
 helpBtn.ZIndex = banner.ZIndex + 1
@@ -3344,7 +3325,7 @@ RegisterThemed(helpBtn)
 
 local tabsUnderlay = Instance.new("Frame")
 tabsUnderlay.Name = "TabsUnderlay"
-tabsUnderlay.Size = UDim2.new(0, isSmallScreen and 120 or 160, 1, -(bannerHeight + TOPBAR_SPACING))
+tabsUnderlay.Size = UDim2.new(0, 160, 1, -(bannerHeight + TOPBAR_SPACING))
 tabsUnderlay.Position = UDim2.new(0, 0, 0, bannerHeight + TOPBAR_SPACING)
 tabsUnderlay.BackgroundColor3 = COLORS.panel
 tabsUnderlay.BackgroundTransparency = 0.85
