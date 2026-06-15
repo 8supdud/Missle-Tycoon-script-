@@ -1,0 +1,385 @@
+-- ts file was generated at discord.gg/25ms
+
+local genv = getgenv()
+local fenv = getfenv()
+local _call3 = game:GetService('TweenService')
+local _call5 = game:GetService('UserInputService')
+local _call9 = game:GetService('Lighting')
+
+game:GetService('HttpService')
+game:GetService('ReplicatedStorage')
+
+local _call17 = game:GetService('Workspace')
+
+game:GetService('GuiService')
+game:GetService('MarketplaceService')
+game:GetService('VirtualInputManager')
+
+local _LocalPlayer24 = game:GetService('Players').LocalPlayer
+local _call26 = _LocalPlayer24:WaitForChild('PlayerGui')
+local _ = _call17.CurrentCamera
+local _ = genv.LeewalkyHubSession
+
+genv.LeewalkyHubSession = 1
+
+local _ = genv.LeewalkyHubSession
+
+Color3.fromRGB(9, 11, 16)
+Color3.fromRGB(18, 21, 29)
+Color3.fromRGB(25, 29, 39)
+Color3.fromRGB(34, 39, 52)
+Color3.fromRGB(245, 248, 252)
+Color3.fromRGB(145, 154, 170)
+Color3.fromRGB(145, 160, 255)
+Color3.fromRGB(95, 105, 255)
+Color3.fromRGB(255, 75, 95)
+Color3.fromRGB(57, 65, 82)
+Color3.fromRGB(5, 10, 13)
+Color3.fromRGB(0, 0, 0)
+
+local _call57 = Color3.fromRGB(17, 19, 26)
+local _call59 = Color3.fromRGB(24, 27, 36)
+
+Color3.fromRGB(34, 38, 50)
+
+local _call65 = Color3.fromRGB(145, 153, 166)
+local _call67 = Color3.fromRGB(145, 160, 255)
+
+Color3.fromRGB(255, 75, 95)
+Color3.fromRGB(5, 7, 10)
+Color3.fromRGB(18, 10, 18)
+Color3.fromRGB(29, 17, 31)
+Color3.fromRGB(42, 24, 45)
+Color3.fromRGB(57, 31, 61)
+Color3.fromRGB(255, 244, 252)
+Color3.fromRGB(211, 162, 199)
+Color3.fromRGB(255, 95, 190)
+Color3.fromRGB(195, 80, 255)
+Color3.fromRGB(255, 77, 119)
+Color3.fromRGB(90, 52, 91)
+Color3.fromRGB(24, 5, 18)
+Color3.fromRGB(0, 0, 0)
+Color3.fromRGB(18, 9, 10)
+Color3.fromRGB(31, 17, 18)
+Color3.fromRGB(43, 23, 25)
+Color3.fromRGB(61, 31, 34)
+Color3.fromRGB(255, 245, 245)
+Color3.fromRGB(216, 157, 159)
+Color3.fromRGB(255, 70, 82)
+Color3.fromRGB(255, 135, 68)
+Color3.fromRGB(255, 58, 72)
+Color3.fromRGB(93, 50, 53)
+Color3.fromRGB(25, 4, 6)
+Color3.fromRGB(0, 0, 0)
+Color3.fromRGB(242, 244, 248)
+Color3.fromRGB(255, 255, 255)
+Color3.fromRGB(232, 236, 244)
+Color3.fromRGB(216, 222, 234)
+Color3.fromRGB(22, 26, 34)
+Color3.fromRGB(94, 105, 123)
+Color3.fromRGB(75, 95, 245)
+Color3.fromRGB(150, 85, 255)
+Color3.fromRGB(230, 55, 73)
+Color3.fromRGB(190, 198, 214)
+Color3.fromRGB(255, 255, 255)
+Color3.fromRGB(0, 0, 0)
+Color3.fromRGB(0, 255, 255)
+Color3.fromRGB(255, 0, 0)
+
+local _ = Enum.KeyCode.Q
+
+_call17:FindFirstChild('Gardens')
+
+local _call162 = _call17.Gardens:FindFirstChild('Plot1'):GetAttribute('Owner')
+local _ = _call162 == _LocalPlayer24.Name
+local _ = _call162 == _LocalPlayer24.UserId
+
+_call17:FindFirstChild('Gardens')
+
+local _call173 = _call17.Gardens:FindFirstChild('Plot2'):GetAttribute('Owner')
+local _ = _call173 == _LocalPlayer24.Name
+local _ = _call173 == _LocalPlayer24.UserId
+
+_call17:FindFirstChild('Gardens')
+
+local _call184 = _call17.Gardens:FindFirstChild('Plot3'):GetAttribute('Owner')
+local _ = _call184 == _LocalPlayer24.Name
+local _ = _call184 == _LocalPlayer24.UserId
+
+_call17:FindFirstChild('Gardens')
+
+local _call195 = _call17.Gardens:FindFirstChild('Plot4'):GetAttribute('Owner')
+local _ = _call195 == _LocalPlayer24.Name
+local _ = _call195 == _LocalPlayer24.UserId
+
+_call17:FindFirstChild('Gardens')
+
+local _call206 = _call17.Gardens:FindFirstChild('Plot5'):GetAttribute('Owner')
+local _ = _call206 == _LocalPlayer24.Name
+local _ = _call206 == _LocalPlayer24.UserId
+
+_call17:FindFirstChild('Gardens')
+
+local _call217 = _call17.Gardens:FindFirstChild('Plot6'):GetAttribute('Owner')
+local _ = _call217 == _LocalPlayer24.Name
+local _ = _call217 == _LocalPlayer24.UserId
+
+_call17:FindFirstChild('Gardens')
+
+local _call228 = _call17.Gardens:FindFirstChild('Plot7'):GetAttribute('Owner')
+local _ = _call228 == _LocalPlayer24.Name
+local _ = _call228 == _LocalPlayer24.UserId
+
+_call17:FindFirstChild('Gardens')
+
+local _call239 = _call17.Gardens:FindFirstChild('Plot8'):GetAttribute('Owner')
+local _ = _call239 == _LocalPlayer24.Name
+local _ = _call239 == _LocalPlayer24.UserId
+
+_call5.InputBegan:Connect(function(_247, _247_2) end)
+game:GetService('RunService').RenderStepped:Connect(function(_251, _251_2, _251_3) end)
+
+local _ = _call5.TouchEnabled
+local _ = _call5.KeyboardEnabled
+local _ = fenv.CONFIG
+local _ = fenv.PlayerGui
+local _ = fenv.LocalPlayer
+
+warn('Device selection failed: [string "sandbox"]:1: attempt to index nil with \'WaitForChild\'')
+
+local _ = _call5.TouchEnabled
+local _ = _call5.KeyboardEnabled
+local _ = genv.LeewalkyHubSession
+local _ = Enum.KeyCode.LeftShift
+
+_call26:FindFirstChild('KrassUI_Local'):Destroy()
+_call9:FindFirstChild('KrassUI_Local_Blur'):Destroy()
+
+local _call274 = Instance.new('ScreenGui')
+
+_call274.Name = 'KrassUI_Local'
+_call274.DisplayOrder = 999
+_call274.Parent = _call26
+_call274.IgnoreGuiInset = true
+_call274.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+_call274.ResetOnSpawn = false
+
+_call9:FindFirstChild('KrassUI_Local_Blur')
+
+local _call284 = Instance.new('Frame')
+
+_call284.AnchorPoint = Vector2.new(0.5, 0.5)
+_call284.BackgroundTransparency = 1
+_call284.Position = UDim2.fromScale(0.5, 0.5)
+_call284.Parent = _call274
+_call284.Size = UDim2.fromOffset(690, 450)
+
+local _call286 = Instance.new('UIScale')
+
+_call286.Parent = _call284
+_call286.Scale = 0.84
+
+local _call296 = Instance.new('ImageLabel')
+
+_call296.ImageColor3 = Color3.fromRGB(0, 0, 0)
+_call296.ScaleType = Enum.ScaleType.Slice
+_call296.ImageTransparency = 1
+_call296.Parent = _call284
+_call296.Image = 'rbxassetid://1316045217'
+_call296.BackgroundTransparency = 1
+_call296.Position = UDim2.fromOffset(-48, -48)
+_call296.Visible = false
+_call296.ZIndex = 0
+_call296.SliceCenter = Rect.new(10, 10, 118, 118)
+_call296.Size = UDim2.new(1, 96, 1, 96)
+
+local _call300 = Instance.new('Frame')
+
+_call300.Size = UDim2.fromScale(1, 1)
+_call300.ClipsDescendants = true
+_call300.Parent = _call284
+_call300.ZIndex = 2
+_call300.BorderSizePixel = 0
+_call300.BackgroundColor3 = Color3.fromRGB(8, 9, 13)
+
+local _call304 = Instance.new('UICorner')
+
+_call304.CornerRadius = UDim.new(0, 12)
+_call304.Parent = _call300
+
+local _call308 = Instance.new('UIStroke')
+
+_call308.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
+_call308.Transparency = 0.12
+_call308.Thickness = 1
+_call308.Color = Color3.fromRGB(58, 64, 80)
+_call308.Parent = _call300
+
+local _call312 = Instance.new('Frame')
+
+_call312.Size = UDim2.new(1, 0, 0, 3)
+_call312.Parent = _call300
+_call312.ZIndex = 4
+_call312.BorderSizePixel = 0
+_call312.BackgroundColor3 = _call67
+
+local _call318 = ColorSequence.new({
+    [1] = ColorSequenceKeypoint.new(0, _call67),
+    [2] = ColorSequenceKeypoint.new(1, Color3.fromRGB(95, 105, 255)),
+})
+local _call320 = Instance.new('UIGradient')
+
+_call320.Color = _call318
+_call320.Parent = _call312
+_call320.Rotation = 0
+
+task.spawn(function(_323, _323_2, _323_3, _323_4)
+    local _ = _call320.Parent
+
+    _call320.Rotation = 0
+
+    local _call332 = _call3:Create(_call320, TweenInfo.new(4, Enum.EasingStyle.Linear, Enum.EasingDirection.Out), {Rotation = 360})
+
+    _call332:Play()
+    task.wait(4)
+
+    local _ = _call320.Parent
+
+    _call320.Rotation = 0
+
+    local _ = Enum.EasingStyle.Linear
+    local _ = TweenInfo.new
+    local _ = Enum.EasingDirection
+
+    error('internal 583: <25ms: infinitelooperror>')
+end)
+
+local _call348 = Instance.new('Frame')
+
+_call348.Rotation = 16
+_call348.Size = UDim2.new(0.18, 0, 1.35, 0)
+_call348.BackgroundTransparency = 0.88
+_call348.Position = UDim2.new(-0.35, 0, 0, 0)
+_call348.Parent = _call300
+_call348.ZIndex = 6
+_call348.BorderSizePixel = 0
+_call348.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+
+local _call356 = ColorSequence.new({
+    [1] = ColorSequenceKeypoint.new(0, Color3.fromRGB(255, 255, 255)),
+    [2] = ColorSequenceKeypoint.new(1, _call67),
+})
+local _call358 = Instance.new('UIGradient')
+
+_call358.Color = _call356
+_call358.Parent = _call348
+_call358.Rotation = 90
+
+task.spawn(function(_361)
+    local _ = _call348.Parent
+
+    _call348.Position = UDim2.new(-0.35, 0, -0.18, 0)
+    _call348.BackgroundTransparency = 0.92
+
+    UDim2.new(1.18, 0, -0.18, 0)
+
+    local _ = Enum.EasingStyle.Quint
+
+    error('internal 583: <25ms: infinitelooperror>')
+end)
+
+local _call375 = Instance.new('Frame')
+
+_call375.Size = UDim2.new(1, 0, 0, 54)
+_call375.Position = UDim2.fromOffset(0, 3)
+_call375.Parent = _call300
+_call375.ZIndex = 3
+_call375.BorderSizePixel = 0
+_call375.BackgroundColor3 = _call57
+
+local _call385 = Instance.new('TextLabel')
+
+_call385.TextColor3 = Color3.fromRGB(244, 246, 250)
+_call385.Parent = _call375
+_call385.Text = 'WalkyHub'
+_call385.Font = Enum.Font.GothamBold
+_call385.BackgroundTransparency = 1
+_call385.TextTruncate = Enum.TextTruncate.AtEnd
+_call385.TextYAlignment = Enum.TextYAlignment.Center
+_call385.TextSize = 17
+_call385.TextXAlignment = Enum.TextXAlignment.Left
+_call385.Position = UDim2.fromOffset(18, 7)
+_call385.Size = UDim2.new(1, -160, 0, 24)
+_call385.ZIndex = 4
+
+local _call399 = Instance.new('TextLabel')
+
+_call399.TextColor3 = _call65
+_call399.Parent = _call375
+_call399.Text = 'Made By Leewalky \u{2764}\u{fe0f}'
+_call399.Font = Enum.Font.Gotham
+_call399.BackgroundTransparency = 1
+_call399.TextTruncate = Enum.TextTruncate.AtEnd
+_call399.TextYAlignment = Enum.TextYAlignment.Center
+_call399.TextSize = 11
+_call399.TextXAlignment = Enum.TextXAlignment.Left
+_call399.Position = UDim2.fromOffset(18, 29)
+_call399.Size = UDim2.new(1, -160, 0, 18)
+_call399.ZIndex = 4
+
+local _call409 = Instance.new('TextButton')
+
+_call409.ClipsDescendants = true
+_call409.Parent = _call375
+_call409.Text = 'X'
+_call409.AutoButtonColor = false
+_call409.Font = Enum.Font.GothamSemibold
+_call409.TextXAlignment = Enum.TextXAlignment.Center
+_call409.TextSize = 13
+_call409.TextColor3 = _call65
+_call409.BorderSizePixel = 0
+_call409.BackgroundColor3 = _call59
+_call409.Position = UDim2.new(1, -44, 0, 11)
+_call409.Size = UDim2.fromOffset(32, 32)
+_call409.ZIndex = 5
+
+local _call417 = Instance.new('UICorner')
+
+_call417.CornerRadius = UDim.new(0, 8)
+_call417.Parent = _call409
+
+local _call423 = Instance.new('TextButton')
+
+_call423.ClipsDescendants = true
+_call423.Parent = _call375
+_call423.Text = '-'
+_call423.AutoButtonColor = false
+_call423.Font = Enum.Font.GothamSemibold
+_call423.TextXAlignment = Enum.TextXAlignment.Center
+_call423.TextSize = 13
+_call423.TextColor3 = _call65
+_call423.BorderSizePixel = 0
+_call423.BackgroundColor3 = _call59
+_call423.Position = UDim2.new(1, -82, 0, 11)
+_call423.Size = UDim2.fromOffset(32, 32)
+_call423.ZIndex = 5
+
+local _call431 = Instance.new('UICorner')
+
+_call431.CornerRadius = UDim.new(0, 8)
+_call431.Parent = _call423
+
+local _call437 = Instance.new('Frame')
+
+_call437.Size = UDim2.new(0, 166, 1, -57)
+_call437.Position = UDim2.fromOffset(0, 57)
+_call437.Parent = _call300
+_call437.ZIndex = 3
+_call437.BorderSizePixel = 0
+_call437.BackgroundColor3 = _call57
+
+UDim.new(0, 12)
+UDim.new(0, 12)
+UDim.new(0, 12)
+UDim.new(0, 12)
+warn('Failed to build hub: [string "./httplog2"]:583: <25ms: infinitelooperror>')
